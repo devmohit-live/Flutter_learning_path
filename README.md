@@ -1,8 +1,5 @@
-# learnflutter
-
 # Flutter_Learning_Path
-
-A new Flutter project.
+A repo having day to day code of what I have learned.
 
 ## Getting Started
 
