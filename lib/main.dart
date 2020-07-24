@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'ui/home.dart';
 
 main() {
-  runApp(myapp());
+  runApp(MyBuildContext());
 }
 
-//checking brach sync from vscode
+// for enabling hot reload
+class MyBuildContext extends StatelessWidget {
+  build(BuildContext context) {
+    return myApp();
+  }
+}
