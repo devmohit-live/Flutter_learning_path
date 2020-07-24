@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 MaterialApp myApp() {
   String myimgurl =
       'https://pbs.twimg.com/profile_images/1101017664565047296/HjsAtquu_400x400.png';
-  var myimage = Image.network(myimgurl);
+
+  // var myimage = Image.network(myimgurl);
   var mytext = Text(
     "Student@AWS",
     style: TextStyle(
@@ -21,7 +23,15 @@ MaterialApp myApp() {
   );
 
   mymail() {
-    print("Clicked Email button");
+    Fluttertoast.showToast(
+        //   FlutterToast.showToast(
+        msg: "This is a Toast",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.black,
+        textColor: Colors.green,
+        fontSize: 16.0);
   }
 
   mycal() {

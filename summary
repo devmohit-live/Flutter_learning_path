@@ -1,6 +1,3 @@
-How to enable hot reload => BuildContext (statelesswidget to save contexts)
-Containers vs Columns => child vs children 
-Decorations
-NetworkImage equivalent to Image.network(url).Image
-some basic styling strucutre
-decoration image, debugbanner off, 
+installing Packages => (popularity and pub points)
+statusbar color : FlutterStatusBarColor.setStatusBarColor (outside MaterialApp() inside Myapp (the thing you are returning))
+toast
