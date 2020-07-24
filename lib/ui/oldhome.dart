@@ -1,24 +1,21 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
-MaterialApp myapp() {
-  var myimage = Image.network(
-    'https://raw.githubusercontent.com/devmohit-live/Images_of_repo/master/portfolio_logos/aws_logo_smile_1200x630.png',
-  );
-
+MaterialApp myApp() {
+  String myimgurl =
+      'https://pbs.twimg.com/profile_images/1101017664565047296/HjsAtquu_400x400.png';
+  var myimage = Image.network(myimgurl);
   var mytext = Text(
-    "Hello this is a Text",
+    "Student@AWS",
     style: TextStyle(
-        color: Colors.white38, fontSize: 30, fontWeight: FontWeight.bold),
+        color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
     textDirection: TextDirection.ltr,
   );
   /* these are just icons , they can't be used to perform certain actions we have to use this icons with something*/
-  Icon MyEmail = Icon(
+  Icon myEmail = Icon(
     Icons.mail,
     color: Colors.white70,
   );
-  Icon MyCal = Icon(
+  Icon myCal = Icon(
     Icons.calendar_today,
     color: Colors.white70,
   );
@@ -32,36 +29,43 @@ MaterialApp myapp() {
   }
 
   /*Buttons have onPressed and other events so the icons can be used here they are called IconButton*/
-  IconButton MyEmailButton = IconButton(icon: MyEmail, onPressed: mymail);
-  IconButton MyCalButton = IconButton(icon: MyCal, onPressed: mycal);
+  IconButton myEmailButton = IconButton(icon: myEmail, onPressed: mymail);
+  IconButton myCalButton = IconButton(icon: myCal, onPressed: mycal);
+
   var myappbar = AppBar(
     title: mytext,
     backgroundColor: Colors.amber,
-    leading: myimage,
+    leading: Image.network(
+        'https://raw.githubusercontent.com/devmohit-live/Images_of_repo/master/portfolio_logos/aws_logo_smile_1200x630.png'),
     actions: <Widget>[
-      MyEmailButton,
-      MyCalButton,
+      myEmailButton,
+      myCalButton,
     ],
   );
 
   var scf = Scaffold(
     appBar: myappbar,
     body: Container(
-      child: Center(child: myimage),
-      // color: Colors.black54,
+      height: 500,
+      alignment: Alignment.bottomCenter,
+      child: Text(
+        "Your Caption Here",
+        textDirection: TextDirection.ltr,
+        textAlign: TextAlign.start,
+        style: TextStyle(
+            fontSize: 35,
+            fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+            color: Colors.white),
+      ),
       decoration: BoxDecoration(
-          // color: Colors.red,
           image: DecorationImage(
-              image: NetworkImage(
-                'https://raw.githubusercontent.com/devmohit-live/Images_of_repo/master/portfolio_logos/aws_logo_smile_1200x630.png',
-              ),
-              fit: BoxFit.cover),
-          // gradient: Gradient.radial(0, 2, [Colors.purple,Colors.blue]),
-          border: Border.all(width: 8, color: Colors.white),
-          borderRadius: BorderRadius.circular(20.0)),
+              image: NetworkImage(myimgurl), fit: BoxFit.contain)),
+      // color: Colors.blue,
     ),
-    backgroundColor: Colors.grey.shade400,
+    backgroundColor: Colors.black87,
   );
+
   var design = MaterialApp(
     home: scf,
     debugShowCheckedModeBanner: false,

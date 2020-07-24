@@ -1,5 +1,5 @@
 How to enable hot reload => BuildContext (statelesswidget to save contexts)
-Containers vs Columns => child vs children (main)
+Containers vs Columns => child vs children 
 Decorations
 NetworkImage equivalent to Image.network(url).Image
 some basic styling strucutre

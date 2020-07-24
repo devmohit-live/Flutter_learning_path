@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
 MaterialApp myApp() {
-  var myimage = Image.network(
-    'https://pbs.twimg.com/profile_images/1101017664565047296/HjsAtquu_400x400.png',
-  );
-
+  String myimgurl =
+      'https://pbs.twimg.com/profile_images/1101017664565047296/HjsAtquu_400x400.png';
+  var myimage = Image.network(myimgurl);
   var mytext = Text(
     "Student@AWS",
     style: TextStyle(
@@ -43,14 +42,42 @@ MaterialApp myApp() {
       myCalButton,
     ],
   );
-
+  var text2 = Text(
+    "Your Caption Here",
+    textDirection: TextDirection.ltr,
+    textAlign: TextAlign.start,
+    style: TextStyle(
+        fontSize: 35,
+        fontWeight: FontWeight.bold,
+        fontStyle: FontStyle.italic,
+        color: Colors.white),
+  );
   var scf = Scaffold(
     appBar: myappbar,
     body: Container(
-      child: Center(child: myimage),
-      color: Colors.blue,
+      height: 600,
+      alignment: Alignment.bottomCenter,
+      child: Column(
+        children: <Widget>[
+          text2,
+          Text(
+            "This is another text",
+            style: TextStyle(
+                fontSize: 40,
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.italic,
+                color: Colors.purple),
+          ),
+        ],
+      ),
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: NetworkImage(myimgurl), fit: BoxFit.contain),
+          border: Border.all(width: 5, color: Colors.amberAccent),
+          borderRadius: BorderRadius.circular(8.0)),
+      // color: Colors.blue,
     ),
-    backgroundColor: Colors.grey.shade400,
+    backgroundColor: Colors.black87,
   );
 
   var design = MaterialApp(
