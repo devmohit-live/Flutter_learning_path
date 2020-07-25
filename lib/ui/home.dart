@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 
 MaterialApp myApp() {
   String myimgurl =
@@ -93,7 +94,8 @@ MaterialApp myApp() {
   var design = MaterialApp(
     home: scf,
     debugShowCheckedModeBanner: false,
-  );
-
+  ); //Material closed here @Mohit
+  // this code has to be there in the MyApp() ie outside the Material but before return statement
+  FlutterStatusbarcolor.setStatusBarColor(Colors.amber.shade600);
   return design;
 }
