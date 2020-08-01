@@ -1,3 +1,12 @@
-installing Packages => (popularity and pub points)
-statusbar color : FlutterStatusBarColor.setStatusBarColor (outside MaterialApp() inside Myapp (the thing you are returning))
-toast
+Layouts:
+Container
+Column
+Stack
+
+
+InkWell:
+GestureDetector
+
+
+Margin, Padding, Alignment
+MainAxisAlingment

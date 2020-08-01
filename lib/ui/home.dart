@@ -1,101 +1,110 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
-MaterialApp myApp() {
-  String myimgurl =
-      'https://pbs.twimg.com/profile_images/1101017664565047296/HjsAtquu_400x400.png';
+myapp() {
+  FlutterStatusbarcolor.setStatusBarColor(Colors.amber.shade300);
 
-  // var myimage = Image.network(myimgurl);
-  var mytext = Text(
-    "Student@AWS",
-    style: TextStyle(
-        color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
-    textDirection: TextDirection.ltr,
-  );
-  /* these are just icons , they can't be used to perform certain actions we have to use this icons with something*/
-  Icon myEmail = Icon(
-    Icons.mail,
-    color: Colors.white70,
-  );
-  Icon myCal = Icon(
-    Icons.calendar_today,
-    color: Colors.white70,
-  );
-
-  mymail() {
+  myt() {
     Fluttertoast.showToast(
-        //   FlutterToast.showToast(
-        msg: "This is a Toast",
+        msg: "This is Mohit !!",
         toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER,
+        gravity: ToastGravity.BOTTOM,
         timeInSecForIosWeb: 1,
-        backgroundColor: Colors.black,
-        textColor: Colors.green,
+        backgroundColor: Colors.amber,
+        textColor: Colors.white,
         fontSize: 16.0);
   }
 
-  mycal() {
-    print("Clicked Calendar button");
-  }
-
-  /*Buttons have onPressed and other events so the icons can be used here they are called IconButton*/
-  IconButton myEmailButton = IconButton(icon: myEmail, onPressed: mymail);
-  IconButton myCalButton = IconButton(icon: myCal, onPressed: mycal);
-
-  var myappbar = AppBar(
-    title: mytext,
-    backgroundColor: Colors.amber,
-    leading: Image.network(
-        'https://raw.githubusercontent.com/devmohit-live/Images_of_repo/master/portfolio_logos/aws_logo_smile_1200x630.png'),
-    actions: <Widget>[
-      myEmailButton,
-      myCalButton,
-    ],
-  );
-  var text2 = Text(
-    "Your Caption Here",
-    textDirection: TextDirection.ltr,
-    textAlign: TextAlign.start,
-    style: TextStyle(
-        fontSize: 35,
-        fontWeight: FontWeight.bold,
-        fontStyle: FontStyle.italic,
-        color: Colors.white),
-  );
-  var scf = Scaffold(
-    appBar: myappbar,
-    body: Container(
-      height: 600,
-      alignment: Alignment.bottomCenter,
-      child: Column(
-        children: <Widget>[
-          text2,
-          Text(
-            "This is another text",
-            style: TextStyle(
-                fontSize: 40,
-                fontWeight: FontWeight.bold,
-                fontStyle: FontStyle.italic,
-                color: Colors.purple),
+  var mybody = Container(
+    alignment: Alignment.center,
+    width: double.infinity,
+    height: double.infinity,
+    color: Colors.grey.shade200,
+    margin: EdgeInsets.all(20),
+    child: Stack(
+      alignment: Alignment.topCenter,
+      children: <Widget>[
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.amber,
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(
+              color: Colors.amber.shade700,
+              width: 3,
+            ),
           ),
+          margin: EdgeInsets.all(50),
+          // padding: EdgeInsets.all(30),
+          // padding: EdgeInsets.only(left: 70),
+          alignment: Alignment.center,
+          width: 450,
+          height: 170,
+          // color: Colors.amber,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'Mohit Singh',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Icon(Icons.email),
+                  Text('  abc@xyz.com'),
+                ],
+              ),
+            ],
+          ),
+        ),
+        // multiple events can be used here with GestureDetector or InkWell, InkWell is old and does'nt offer that much evenets
+        GestureDetector(
+          onDoubleTap: () => print('Double tap'),
+          onTap: () => print('single tap'),
+          child: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage(
+                    'https://pbs.twimg.com/profile_images/1101017664565047296/HjsAtquu_400x400.png'),
+                fit: BoxFit.cover,
+              ),
+              color: Colors.amber.shade700,
+              borderRadius: BorderRadius.circular(50),
+              border: Border.all(
+                color: Colors.amber.shade700,
+                width: 3,
+              ),
+            ),
+            // margin: EdgeInsets.all(20),
+            width: 100,
+            height: 100,
+            // color: Colors.blue,
+            // child: Text('second'),
+          ),
+        ),
+      ],
+    ),
+  );
+
+  return MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: Scaffold(
+      appBar: AppBar(
+        title: Text('LW Students'),
+        backgroundColor: Colors.amber,
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.add_a_photo), onPressed: myt),
+          IconButton(
+              icon: Icon(Icons.account_circle),
+              onPressed: () => print('Icon pressed'))
         ],
       ),
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: NetworkImage(myimgurl), fit: BoxFit.contain),
-          border: Border.all(width: 5, color: Colors.amberAccent),
-          borderRadius: BorderRadius.circular(8.0)),
-      // color: Colors.blue,
+      body: mybody,
     ),
-    backgroundColor: Colors.black87,
   );
-
-  var design = MaterialApp(
-    home: scf,
-    debugShowCheckedModeBanner: false,
-  ); //Material closed here @Mohit
-  // this code has to be there in the MyApp() ie outside the Material but before return statement
-  FlutterStatusbarcolor.setStatusBarColor(Colors.amber.shade600);
-  return design;
 }
