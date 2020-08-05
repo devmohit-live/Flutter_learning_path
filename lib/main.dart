@@ -7,9 +7,6 @@ main() {
 }
 
 class MyApp extends StatelessWidget {
-  /*
-  http module doesn't takes variable as url the url has to be directly given in url field as it gives socket error 
-  */
   var date = "http://192.168.43.55/cgi-bin/date";
   var id = "http://192.168.43.55/cgi-bin/id";
   String cal = "http://192.168.43.55/cgi-bin/cal";
