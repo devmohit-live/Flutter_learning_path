@@ -10,26 +10,26 @@ class MyApp extends StatelessWidget {
   /*
   http module doesn't takes variable as url the url has to be directly given in url field as it gives socket error 
   */
-  // String date = 'http://192.168.43.55/cgi-bin/date';
-  // String id = "http://192.168.43.55/cgi-bin/id";
-  // String cal = 'http://192.168.43.55/cgi-bin/cal';
+  var date = "http://192.168.43.55/cgi-bin/date";
+  var id = "http://192.168.43.55/cgi-bin/id";
+  String cal = "http://192.168.43.55/cgi-bin/cal";
 
   funcdate() async {
-    var response = await http.get('http://192.168.43.55/cgi-bin/date');
+    var response = await http.get(date);
     print("Status code is ${response.statusCode}");
     print("Output is");
     print(response.body);
   }
 
   funccal() async {
-    var response = await http.get('http://192.168.43.55/cgi-bin/cal');
+    var response = await http.get(cal);
     print("Status code is ${response.statusCode}");
     print("Output is");
     print(response.body);
   }
 
   funcid() async {
-    var response = await http.get('http://192.168.43.55/cgi-bin/id');
+    var response = await http.get(id);
     print("Status code is ${response.statusCode}");
     print("Output is");
     print(response.body);
@@ -60,7 +60,7 @@ class MyApp extends StatelessWidget {
                 ),
                 Container(
                   child: RaisedButton(
-                      child: Text("Execute ID command"), onPressed: funccal),
+                      child: Text("Execute Cal command"), onPressed: funccal),
                 )
               ],
             ),
