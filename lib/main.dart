@@ -21,9 +21,16 @@ class MyApp extends StatelessWidget {
 
     FlutterStatusbarcolor.setStatusBarColor(Colors.deepOrange);
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.deepOrangeAccent,
+            actions: <Widget>[
+              IconButton(
+                  icon: Icon(Icons.info_outline),
+                  onPressed: () => print("hello"))
+            ],
+            title: Text("Remote Command Eexecutor"),
           ),
           body: Center(
             child: Container(
