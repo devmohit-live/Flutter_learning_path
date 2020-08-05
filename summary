@@ -1,7 +1,4 @@
-RaisedButton
-Executing certain commands on webserver on CGI
-Making CGI Scripts
-Permission of the files should be +rx
-each file has the certain commands
-files should have a certain format
-http module in flutter
+Flat Button
+use of variable in url
+right now we have to still create manually seperate file for each command , will improve this cgi in some weeks
+need to work on overflowing pixels and set the ui for universal devices
