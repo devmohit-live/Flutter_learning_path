@@ -1,0 +1,7 @@
+#!/usr/bin/python3
+import subprocess as sb
+print("content-type: text/html\n")
+cmd=sb.getoutput("whoami")
+print("<html> <b><pre>{}</pre></b></html>".format(cmd))
+
+

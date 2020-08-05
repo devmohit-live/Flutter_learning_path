@@ -1,12 +1,8 @@
-Layouts:
-Container
-Column
-Stack
-
-
-InkWell:
-GestureDetector
-
-
-Margin, Padding, Alignment
-MainAxisAlingment
+RaisedButton
+Executing certain commands on webserver on CGI
+Making CGI Scripts
+Permission of the files should be +rx
+each file has the certain commands
+files should have a certain format
+http module in flutter
+http module doesn't takes variable as url the url has to be directly given in url field as it gives socket error
