@@ -1,0 +1,19 @@
+#!/usr/bin/python3
+print("content-type: text/html\n")
+import subprocess as sb
+import cgi
+mydata=cgi.FieldStorage()
+x=mydata.getvalue('x')
+#y=mydata.getvalue('y')
+cmd= "sudo {}".format(x)
+ret,output=sb.getstatusoutput(x)
+if ret == 0:
+    print('Command Ecetuted Successfully')
+    print('Output :\n',output)
+else:
+    print('Command Failed!!!')
+    print('Error :\n',output)
+
+
+
+

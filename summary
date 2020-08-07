@@ -1,4 +1,14 @@
-Flat Button
-use of variable in url
-right now we have to still create manually seperate file for each command , will improve this cgi in some weeks
-need to work on overflowing pixels and set the ui for universal devices
+In this branch/day we will be modifying the day7 code so that:
+* there will be no need to create a seperate file for every command
+* will know how to pass and use multiple values in the url (GET method) that can be used as parameters for various commands like:
+ - docker :  name, image, volume, etc
+* displaying output for the commands.
+
+passing two or more parameters:
+ip/cgi-bin/file?a=val1&b=val2
+
+TODO:
+
+* Will have to learn controller and stateful widgets
+* have to imporove the ui by :  automatically shifting the content upwards when keyboard apperas
+
