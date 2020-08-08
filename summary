@@ -1,14 +1,8 @@
-In this branch/day we will be modifying the day7 code so that:
-* there will be no need to create a seperate file for every command
-* will know how to pass and use multiple values in the url (GET method) that can be used as parameters for various commands like:
- - docker :  name, image, volume, etc
-* displaying output for the commands.
-
-passing two or more parameters:
-ip/cgi-bin/file?a=val1&b=val2
-
-TODO:
-
-* Will have to learn controller and stateful widgets
-* have to imporove the ui by :  automatically shifting the content upwards when keyboard apperas
-
+In this branch/day we will be learn how to use assets(present as a part of our app after build) in our app:
+* we will also be learning how to play audio from assets and from internet
+* in assets to include file and folder we use this syntax:
+file : folder/filename
+all files in a folder folder/
+* adding stay awake permission in mainfest file for audio to play for long time : <uses-permission android:name="android.permission.WAKE_LOCK" />
+* by default auioplayers takes files from assets folder to get files from other folder provide 'prefix: 'audio/' in AudioCache() contructor as an argument
+* AudioPlayer class to play audios from net

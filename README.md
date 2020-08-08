@@ -2,9 +2,18 @@
 
 A repo having day to day code of what I have learned.
 
-## Universal Command Executor
+## Audio Player
 
-run any linux command on your server using flutter as frontend.
+play audio from assets , internet
+
+- ### TO improve:
+  - assests audio doesn't supports pause,stop feature
+  - Playing local files from storage is tricky
+  - UI isn't good => provide a universal control feature for all the audios
+  - avoid multiple audios to be played at a time
+- ### Extras:
+  - playing from phone storage
+  - video player support (assets/local/url)
 
 ## Getting Started
 
