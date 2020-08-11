@@ -1,4 +1,4 @@
-## In this branch/day we will be modifying the day10 code so that:
+## In this branch/day we will be modifying the day10 code :
 
 - Stateful Widgets
 
